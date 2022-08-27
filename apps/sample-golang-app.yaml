@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: sample-go-app
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/imtmcdonald/app-manifests.git
+      revision: HEAD
+      files:
+      - path: "deployments/**/config.json"
+  template:
+    metadata:
+      name: '{{tenant.name}}-sample-go-app'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/imtmcdonald/sample-golang-app.git
+        targetRevision: development
+        path: "deploy/chart/sample-golang-app/"
+        helm:
+          releaseName: '{{tenant.name}}-sample-go-app'
+          parameters:
+          - name: image.pullPolicy
+            value: '{{config.imagePullPolicy}}'
+          - name: config.tenantName
+            value: '{{tenant.name}}'
+      destination:
+        server: '{{cluster.address}}'
+        namespace: '{{tenant.name}}'

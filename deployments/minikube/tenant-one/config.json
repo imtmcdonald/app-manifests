@@ -1,0 +1,12 @@
+{
+    "tenant": {
+      "name": "tenant-one"
+    },
+    "config": {
+      "imagePullPolicy": "Never"
+    },
+    "cluster": {
+      "name": "in-cluster",
+      "address": "https://kubernetes.default.svc"
+    }
+}
