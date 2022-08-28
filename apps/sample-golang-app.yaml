@@ -13,6 +13,9 @@ spec:
     metadata:
       name: '{{tenant.name}}-sample-go-app'
     spec:
+      syncPolicy:
+        automated:
+          selfHeal: true
       project: default
       source:
         repoURL: https://github.com/imtmcdonald/sample-golang-app.git
