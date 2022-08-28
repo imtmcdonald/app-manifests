@@ -1,6 +1,6 @@
 {
     "tenant": {
-      "name": "tenant-threes"
+      "name": "tenant-three"
     },
     "config": {
       "imagePullPolicy": "Never"
