@@ -29,7 +29,7 @@ spec:
           - name: image.repository
             value: 'ghcr.io/imtmcdonald/sample-golang-app'
           - name: image.pullPolicy
-            value: '{{config.imagePullPolicy}}'
+            value: 'IfNotPresent'
           - name: config.tenantName
             value: '{{tenant.name}}'
       destination:
