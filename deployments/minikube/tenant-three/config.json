@@ -2,7 +2,7 @@
     "tenant": {
       "name": "tenant-three"
     },
-    "sample-golang-app": {
+    "sample_golang_app": {
       "imageTag": "0.1.0",
       "imageRepository": "ghcr.io/imtmcdonald/sample-golang-app",
       "imagePullPolicy": "IfNotPresent"
