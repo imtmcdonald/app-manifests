@@ -25,11 +25,11 @@ spec:
           releaseName: '{{tenant.name}}-sample-go-app'
           parameters:
           - name: image.tag
-            value: 0.1.0
+            value: '{{sample-golang-app.imageTag}}'
           - name: image.repository
-            value: 'ghcr.io/imtmcdonald/sample-golang-app'
+            value: '{{sample-golang-app.imageRepository}}'
           - name: image.pullPolicy
-            value: 'IfNotPresent'
+            value: '{{sample-golang-app.imagePullPolicy}}'
           - name: config.tenantName
             value: '{{tenant.name}}'
       destination:
