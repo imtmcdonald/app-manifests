@@ -23,7 +23,11 @@ spec:
         path: "deploy/chart/sample-golang-app/"
         helm:
           releaseName: '{{tenant.name}}-sample-go-app'
-          parameters:
+          parameters:\
+          - name: image.tag
+            value: 0.1.0
+          - name: image.repository
+            value: ghcr.io/imtmcdonald/sample-golang-app
           - name: image.pullPolicy
             value: '{{config.imagePullPolicy}}'
           - name: config.tenantName
