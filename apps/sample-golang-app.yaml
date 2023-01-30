@@ -25,11 +25,11 @@ spec:
           releaseName: '{{tenant.name}}-sample-go-app'
           parameters:
           - name: image.tag
-            value: "{{sample-golang-app.imageTag}}"
+            value: "{{sample_golang_app.imageTag}}"
           - name: image.repository
-            value: "{{sample-golang-app.imageRepository}}"
+            value: "{{sample_golang_app.imageRepository}}"
           - name: image.pullPolicy
-            value: "{{sample-golang-app.imagePullPolicy}}"
+            value: "{{sample_golang_app.imagePullPolicy}}"
           - name: config.tenantName
             value: "{{tenant.name}}"
       destination:
